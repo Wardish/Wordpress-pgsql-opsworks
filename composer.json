@@ -37,7 +37,7 @@
         }
     },
   "scripts": {
-    "build": [
+    "post-install-cmd": [
       "cp -R vendor/WordPress/WordPress wp",
       "cp -R vendor/kevinoid/postgresql-for-wordpress/pg4wp wp/wp-content/plugins/pg4wp",
       "cp vendor/kevinoid/postgresql-for-wordpress/pg4wp/db.php wp/wp-content/"
