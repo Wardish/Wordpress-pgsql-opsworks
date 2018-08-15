@@ -26,7 +26,7 @@ define('DB_NAME', $_SERVER['WP_DB_NAME']);
 define('DB_USER', $_SERVER['WP_DB_USER']);
 
 /** MySQL database password */
-define('DB_PASSWORD', $_SERvER['WP_DB_PASSWORD']);
+define('DB_PASSWORD', $_SERVER['WP_DB_PASSWORD']);
 
 /** MySQL hostname */
 define('DB_HOST', $_SERVER['WP_DB_HOST']);
