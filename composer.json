@@ -40,7 +40,9 @@
     "post-install-cmd": [
       "cp -R vendor/WordPress/WordPress wp",
       "cp -R vendor/kevinoid/postgresql-for-wordpress/pg4wp wp/wp-content/plugins/pg4wp",
-      "cp vendor/kevinoid/postgresql-for-wordpress/pg4wp/db.php wp/wp-content/"
+      "cp vendor/kevinoid/postgresql-for-wordpress/pg4wp/db.php wp/wp-content/",
+      "cp wp-config.php wp/wp-config.php",
+      "curl https://api.wordpress.org/secret-key/1.1/salt/  | sed -i '48r /dev/stdin' wp/wp-config.php"
     ],
     "clean": [
       "rm -rf vendor",
