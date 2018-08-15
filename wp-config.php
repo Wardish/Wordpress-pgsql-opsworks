@@ -50,6 +50,9 @@ define('DB_COLLATE', '');
 
 /**#@-*/
 
+define( 'AS3CF_AWS_ACCESS_KEY_ID', $_SERVER['WP_AWS_ACCESS_KEY_ID'] );
+define( 'AS3CF_AWS_SECRET_ACCESS_KEY', $_SERVER['WP_AWS_SECRET_ACCESS_KEY'] );
+
 /**
  * WordPress Database Table prefix.
  *
