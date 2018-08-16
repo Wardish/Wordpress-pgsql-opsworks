@@ -1,0 +1,53 @@
+{
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "WordPress/WordPress",
+        "version": "4.8",
+        "dist" : {
+          "type": "tar",
+          "url": "https://wordpress.org/wordpress-4.8.7.tar.gz"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "kevinoid/postgresql-for-wordpress",
+        "version": "4.8",
+        "dist" : {
+          "type": "zip",
+          "url": "https://github.com/kevinoid/postgresql-for-wordpress/archive/wordpress4-compat.zip"
+        }
+      }
+    },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+  ],
+  "require": {
+    "WordPress/WordPress": "*",
+    "kevinoid/postgresql-for-wordpress": "*"
+  },
+    "extra": {
+        "installer-paths": {
+            "plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    },
+  "scripts": {
+    "post-install-cmd": [
+      "cp -R vendor/WordPress/WordPress wp",
+      "cp -R vendor/kevinoid/postgresql-for-wordpress/pg4wp wp/wp-content/plugins/pg4wp",
+      "cp vendor/kevinoid/postgresql-for-wordpress/pg4wp/db.php wp/wp-content/",
+      "cp wp-config.php wp/wp-config.php",
+      "curl https://api.wordpress.org/secret-key/1.1/salt/  | sed -i '48r /dev/stdin' wp/wp-config.php"
+    ],
+    "clean": [
+      "rm -rf vendor",
+      "rm -rf wp"
+    ]
+
+  }
+}
